@@ -2,8 +2,8 @@ package fuzs.lockedinslots.data.client;
 
 import fuzs.lockedinslots.LockedInSlots;
 import fuzs.lockedinslots.client.handler.NoSlotInteractionHandler;
-import fuzs.puzzleslib.api.client.data.v2.AbstractLanguageProvider;
-import fuzs.puzzleslib.api.data.v2.core.DataProviderContext;
+import fuzs.puzzleslib.common.api.client.data.v2.AbstractLanguageProvider;
+import fuzs.puzzleslib.common.api.data.v2.core.DataProviderContext;
 
 public class ModLanguageProvider extends AbstractLanguageProvider {
 

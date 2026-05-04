@@ -3,12 +3,12 @@ package fuzs.lockedinslots.client;
 import fuzs.lockedinslots.LockedInSlots;
 import fuzs.lockedinslots.client.handler.NoSlotInteractionHandler;
 import fuzs.lockedinslots.client.handler.SlotOverlayHandler;
-import fuzs.puzzleslib.api.client.core.v1.ClientModConstructor;
-import fuzs.puzzleslib.api.client.core.v1.context.GuiLayersContext;
-import fuzs.puzzleslib.api.client.core.v1.context.KeyMappingsContext;
-import fuzs.puzzleslib.api.client.event.v1.ClientTickEvents;
-import fuzs.puzzleslib.api.client.event.v1.gui.*;
-import fuzs.puzzleslib.api.client.key.v1.KeyActivationHandler;
+import fuzs.puzzleslib.common.api.client.core.v1.ClientModConstructor;
+import fuzs.puzzleslib.common.api.client.core.v1.context.GuiLayersContext;
+import fuzs.puzzleslib.common.api.client.core.v1.context.KeyMappingsContext;
+import fuzs.puzzleslib.common.api.client.event.v1.ClientTickEvents;
+import fuzs.puzzleslib.common.api.client.event.v1.gui.*;
+import fuzs.puzzleslib.common.api.client.key.v1.KeyActivationHandler;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 
 public class LockedInSlotsClient implements ClientModConstructor {

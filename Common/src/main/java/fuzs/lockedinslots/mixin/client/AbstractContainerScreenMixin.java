@@ -1,7 +1,7 @@
 package fuzs.lockedinslots.mixin.client;
 
 import fuzs.lockedinslots.client.handler.NoSlotInteractionHandler;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.RenderPipelines;
@@ -22,16 +22,16 @@ abstract class AbstractContainerScreenMixin extends Screen {
         super(title);
     }
 
-    @Inject(method = "renderSlot",
+    @Inject(method = "extractSlot",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;isEmpty()Z", ordinal = 0),
             slice = @Slice(from = @At(value = "INVOKE",
                                       target = "Lnet/minecraft/client/gui/screens/inventory/AbstractContainerScreen;recalculateQuickCraftRemaining()V")))
-    protected void renderSlot(GuiGraphics guiGraphics, Slot slot, int mouseX, int mouseY, CallbackInfo callback) {
-        // render our item icon for slots that have an item in them,
-        // vanilla only renders for empty slots which we handle in the other method
+    protected void extractSlot(GuiGraphicsExtractor graphics, Slot slot, int mouseX, int mouseY, CallbackInfo callback) {
+        // Render our item icon for slots that have an item in them,
+        // vanilla only renders for empty slots which we handle in the other method.
         if (slot.hasItem() && slot.isActive()) {
             NoSlotInteractionHandler.getNoItemIcon(slot)
-                    .ifPresent((Identifier identifier) -> guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED,
+                    .ifPresent((Identifier identifier) -> graphics.blitSprite(RenderPipelines.GUI_TEXTURED,
                             identifier,
                             slot.x,
                             slot.y,
@@ -40,9 +40,9 @@ abstract class AbstractContainerScreenMixin extends Screen {
         }
     }
 
-    @ModifyVariable(method = "renderSlot", at = @At("STORE"))
-    protected Identifier renderSlot(Identifier noItemIcon, GuiGraphics guiGraphics, Slot slot) {
+    @ModifyVariable(method = "extractSlot", at = @At("STORE"))
+    protected Identifier extractSlot(Identifier icon, GuiGraphicsExtractor graphics, Slot slot) {
         // replace the vanilla item icon in case one is present
-        return NoSlotInteractionHandler.getNoItemIcon(slot).orElse(noItemIcon);
+        return NoSlotInteractionHandler.getNoItemIcon(slot).orElse(icon);
     }
 }

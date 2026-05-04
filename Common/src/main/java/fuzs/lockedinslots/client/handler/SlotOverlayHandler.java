@@ -4,12 +4,12 @@ import com.mojang.blaze3d.platform.InputConstants;
 import fuzs.lockedinslots.LockedInSlots;
 import fuzs.lockedinslots.config.ClientConfig;
 import fuzs.lockedinslots.config.WorldSlotsStorage;
-import fuzs.puzzleslib.api.event.v1.core.EventResult;
+import fuzs.puzzleslib.common.api.event.v1.core.EventResult;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
@@ -33,7 +33,7 @@ public class SlotOverlayHandler {
     @Nullable
     private static Slot hoveredSlot;
 
-    public static EventResult onRenderTooltip(GuiGraphics guiGraphics, Font font, int mouseX, int mouseY, List<ClientTooltipComponent> components, ClientTooltipPositioner positioner) {
+    public static EventResult onRenderTooltip(GuiGraphicsExtractor guiGraphics, Font font, int mouseX, int mouseY, List<ClientTooltipComponent> components, ClientTooltipPositioner positioner) {
         if (triggerTime > 0.0F && Minecraft.getInstance().screen instanceof AbstractContainerScreen<?> screen) {
             if (hoveredSlot != null && hoveredSlot.hasItem() && screen.hoveredSlot == hoveredSlot && screen.getMenu()
                     .getCarried()
@@ -45,7 +45,7 @@ public class SlotOverlayHandler {
         return EventResult.PASS;
     }
 
-    public static void renderGuiLayer(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
+    public static void renderGuiLayer(GuiGraphicsExtractor guiGraphics, DeltaTracker deltaTracker) {
         Player player = Minecraft.getInstance().gui.getCameraPlayer();
         if (player != null && hoveredSlot != null) {
             float partialTick = deltaTracker.getGameTimeDeltaPartialTick(false);
@@ -58,7 +58,7 @@ public class SlotOverlayHandler {
         }
     }
 
-    public static void onAfterRender(AbstractContainerScreen<?> screen, GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
+    public static void onAfterRender(AbstractContainerScreen<?> screen, GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick) {
         if (hoveredSlot != null && getNormalizedTriggerTime(partialTick) > 0.0F) {
             guiGraphics.pose().pushMatrix();
             guiGraphics.pose().translate(screen.leftPos, screen.topPos);
@@ -67,7 +67,7 @@ public class SlotOverlayHandler {
         }
     }
 
-    private static void renderSlotOverlay(GuiGraphics guiGraphics, int posX, int posY, float partialTick) {
+    private static void renderSlotOverlay(GuiGraphicsExtractor guiGraphics, int posX, int posY, float partialTick) {
         float animationProgress = Math.clamp(getNormalizedTriggerTime(partialTick), 0.0F, 1.0F);
         // color kindly stolen from Bedrockify mod's slot highlight :P
         guiGraphics.fill(posX, posY + Mth.floor(16.0F * (1.0F - animationProgress)), posX + 16, posY + 16, 0X8955BA00);

@@ -6,14 +6,14 @@ import com.google.common.collect.Maps;
 import com.google.common.io.Files;
 import fuzs.lockedinslots.LockedInSlots;
 import fuzs.lockedinslots.client.handler.SlotOverlayHandler;
-import fuzs.puzzleslib.api.core.v1.ModLoaderEnvironment;
+import fuzs.puzzleslib.common.api.core.v1.ModLoaderEnvironment;
 import it.unimi.dsi.fastutil.ints.IntAVLTreeSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import it.unimi.dsi.fastutil.ints.IntSets;
+import net.minecraft.SystemReport;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.level.storage.WorldData;
 
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
@@ -22,6 +22,7 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 
@@ -63,14 +64,18 @@ public final class WorldSlotsStorage {
         save();
     }
 
+    /**
+     * @see Minecraft#archiveProfilingReport(SystemReport, List)
+     */
     private static String getCurrentWorldKey() {
-        // similar to Minecraft::archiveProfilingReport
         Minecraft minecraft = Minecraft.getInstance();
         String string;
         if (minecraft.isLocalServer()) {
-            WorldData worldData = minecraft.getSingleplayerServer().getWorldData();
-            // world name allows for duplicates, only the file name will be different which there is no access to in-game, so add the world seed instead
-            string = worldData.getLevelName() + "-" + worldData.worldGenOptions().seed();
+            // The world name allows for duplicates, only the file name will be different, which there is no access to in-game.
+            // So, we add the world seed instead.
+            String levelName = minecraft.getSingleplayerServer().getWorldData().getLevelName();
+            long seed = minecraft.getSingleplayerServer().getWorldGenSettings().options().seed();
+            string = levelName + "-" + seed;
         } else {
             ServerData serverData = minecraft.getCurrentServer();
             string = serverData != null ? serverData.name + "-" + serverData.ip : "world";
