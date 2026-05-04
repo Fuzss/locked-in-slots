@@ -1,9 +1,9 @@
-package fuzs.lockedinslots.client.handler;
+package fuzs.lockedinslots.common.client.handler;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import fuzs.lockedinslots.LockedInSlots;
-import fuzs.lockedinslots.config.ClientConfig;
-import fuzs.lockedinslots.config.WorldSlotsStorage;
+import fuzs.lockedinslots.common.LockedInSlots;
+import fuzs.lockedinslots.common.config.ClientConfig;
+import fuzs.lockedinslots.common.config.WorldSlotsStorage;
 import fuzs.puzzleslib.common.api.event.v1.core.EventResult;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.KeyMapping;

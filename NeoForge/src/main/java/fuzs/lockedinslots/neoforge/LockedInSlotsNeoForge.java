@@ -1,6 +1,6 @@
 package fuzs.lockedinslots.neoforge;
 
-import fuzs.lockedinslots.LockedInSlots;
+import fuzs.lockedinslots.common.LockedInSlots;
 import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
 import net.neoforged.fml.common.Mod;
 

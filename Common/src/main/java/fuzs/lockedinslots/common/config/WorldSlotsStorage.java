@@ -1,11 +1,11 @@
-package fuzs.lockedinslots.config;
+package fuzs.lockedinslots.common.config;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Maps;
 import com.google.common.io.Files;
-import fuzs.lockedinslots.LockedInSlots;
-import fuzs.lockedinslots.client.handler.SlotOverlayHandler;
+import fuzs.lockedinslots.common.LockedInSlots;
+import fuzs.lockedinslots.common.client.handler.SlotOverlayHandler;
 import fuzs.puzzleslib.common.api.core.v1.ModLoaderEnvironment;
 import it.unimi.dsi.fastutil.ints.IntAVLTreeSet;
 import it.unimi.dsi.fastutil.ints.IntSet;

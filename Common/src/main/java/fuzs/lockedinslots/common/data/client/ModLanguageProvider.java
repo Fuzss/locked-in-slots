@@ -1,7 +1,7 @@
-package fuzs.lockedinslots.data.client;
+package fuzs.lockedinslots.common.data.client;
 
-import fuzs.lockedinslots.LockedInSlots;
-import fuzs.lockedinslots.client.handler.NoSlotInteractionHandler;
+import fuzs.lockedinslots.common.LockedInSlots;
+import fuzs.lockedinslots.common.client.handler.NoSlotInteractionHandler;
 import fuzs.puzzleslib.common.api.client.data.v2.AbstractLanguageProvider;
 import fuzs.puzzleslib.common.api.data.v2.core.DataProviderContext;
 

@@ -1,9 +1,9 @@
-package fuzs.lockedinslots.mixin.client;
+package fuzs.lockedinslots.common.mixin.client;
 
-import fuzs.lockedinslots.LockedInSlots;
-import fuzs.lockedinslots.client.handler.NoSlotInteractionHandler;
-import fuzs.lockedinslots.config.ClientConfig;
-import fuzs.lockedinslots.config.WorldSlotsStorage;
+import fuzs.lockedinslots.common.LockedInSlots;
+import fuzs.lockedinslots.common.client.handler.NoSlotInteractionHandler;
+import fuzs.lockedinslots.common.config.ClientConfig;
+import fuzs.lockedinslots.common.config.WorldSlotsStorage;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphicsExtractor;

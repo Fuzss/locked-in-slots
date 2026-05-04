@@ -1,8 +1,8 @@
 package fuzs.lockedinslots.neoforge.client;
 
-import fuzs.lockedinslots.LockedInSlots;
-import fuzs.lockedinslots.client.LockedInSlotsClient;
-import fuzs.lockedinslots.data.client.ModLanguageProvider;
+import fuzs.lockedinslots.common.LockedInSlots;
+import fuzs.lockedinslots.common.client.LockedInSlotsClient;
+import fuzs.lockedinslots.common.data.client.ModLanguageProvider;
 import fuzs.puzzleslib.common.api.client.core.v1.ClientModConstructor;
 import fuzs.puzzleslib.neoforge.api.data.v2.core.DataProviderHelper;
 import net.neoforged.api.distmarker.Dist;

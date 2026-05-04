@@ -1,6 +1,6 @@
-package fuzs.lockedinslots.mixin.client;
+package fuzs.lockedinslots.common.mixin.client;
 
-import fuzs.lockedinslots.client.handler.NoSlotInteractionHandler;
+import fuzs.lockedinslots.common.client.handler.NoSlotInteractionHandler;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;

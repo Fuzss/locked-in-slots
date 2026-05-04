@@ -1,8 +1,8 @@
-package fuzs.lockedinslots.client;
+package fuzs.lockedinslots.common.client;
 
-import fuzs.lockedinslots.LockedInSlots;
-import fuzs.lockedinslots.client.handler.NoSlotInteractionHandler;
-import fuzs.lockedinslots.client.handler.SlotOverlayHandler;
+import fuzs.lockedinslots.common.LockedInSlots;
+import fuzs.lockedinslots.common.client.handler.NoSlotInteractionHandler;
+import fuzs.lockedinslots.common.client.handler.SlotOverlayHandler;
 import fuzs.puzzleslib.common.api.client.core.v1.ClientModConstructor;
 import fuzs.puzzleslib.common.api.client.core.v1.context.GuiLayersContext;
 import fuzs.puzzleslib.common.api.client.core.v1.context.KeyMappingsContext;

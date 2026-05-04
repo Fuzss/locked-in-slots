@@ -1,6 +1,6 @@
-package fuzs.lockedinslots.config;
+package fuzs.lockedinslots.common.config;
 
-import fuzs.lockedinslots.client.handler.SlotOverlayHandler;
+import fuzs.lockedinslots.common.client.handler.SlotOverlayHandler;
 import fuzs.puzzleslib.common.api.config.v3.Config;
 import fuzs.puzzleslib.common.api.config.v3.ConfigCore;
 

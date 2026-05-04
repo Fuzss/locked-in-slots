@@ -1,7 +1,7 @@
 package fuzs.lockedinslots.fabric.client;
 
-import fuzs.lockedinslots.LockedInSlots;
-import fuzs.lockedinslots.client.LockedInSlotsClient;
+import fuzs.lockedinslots.common.LockedInSlots;
+import fuzs.lockedinslots.common.client.LockedInSlotsClient;
 import fuzs.puzzleslib.common.api.client.core.v1.ClientModConstructor;
 import net.fabricmc.api.ClientModInitializer;
 
