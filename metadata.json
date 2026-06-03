@@ -8,7 +8,7 @@
         "authors": [
             "Fuzs"
         ],
-        "description": "Example description.",
+        "description": "Lock your inventory slots. Protect your tools. Prevent accidents, fully client-side.",
         "license": "MPL-2.0"
     },
     "dependencies": [
@@ -37,8 +37,18 @@
     ],
     "links": [
         {
+            "name": "curseforge",
+            "slug": "locked-in-slots",
+            "id": "1563534"
+        },
+        {
             "name": "github",
             "slug": "locked-in-slots"
+        },
+        {
+            "name": "modrinth",
+            "slug": "locked-in-slots",
+            "id": "y2Xn63zs"
         }
     ],
     "environments": {
