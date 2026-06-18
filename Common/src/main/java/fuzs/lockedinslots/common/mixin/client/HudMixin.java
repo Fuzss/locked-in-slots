@@ -5,8 +5,8 @@ import fuzs.lockedinslots.common.client.handler.NoSlotInteractionHandler;
 import fuzs.lockedinslots.common.config.ClientConfig;
 import fuzs.lockedinslots.common.config.WorldSlotsStorage;
 import net.minecraft.client.DeltaTracker;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.Hud;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.util.ARGB;
 import net.minecraft.world.entity.player.Inventory;
@@ -15,8 +15,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(Gui.class)
-abstract class GuiMixin {
+@Mixin(Hud.class)
+abstract class HudMixin {
 
     @Inject(method = "extractItemHotbar",
             at = @At(value = "INVOKE",

@@ -29,10 +29,10 @@ public class LockedInSlotsClient implements ClientModConstructor {
                 .register(NoSlotInteractionHandler::onBeforeMouseDrag);
         ScreenMouseEvents.beforeMouseRelease(AbstractContainerScreen.class)
                 .register(NoSlotInteractionHandler::onBeforeMouseRelease);
-        ScreenEvents.afterRender(AbstractContainerScreen.class).register(NoSlotInteractionHandler::onAfterRender);
+        ScreenEvents.afterExtract(AbstractContainerScreen.class).register(NoSlotInteractionHandler::onAfterExtract);
         ItemTooltipCallback.EVENT.register(NoSlotInteractionHandler::onItemTooltip);
         ClientTickEvents.START.register(NoSlotInteractionHandler::onStartClientTick);
-        ScreenEvents.afterRender(AbstractContainerScreen.class).register(SlotOverlayHandler::onAfterRender);
+        ScreenEvents.afterExtract(AbstractContainerScreen.class).register(SlotOverlayHandler::onAfterExtract);
         RenderTooltipCallback.EVENT.register(SlotOverlayHandler::onRenderTooltip);
         ClientTickEvents.END.register(SlotOverlayHandler::onEndClientTick);
     }

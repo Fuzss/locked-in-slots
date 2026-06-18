@@ -34,7 +34,7 @@ public class SlotOverlayHandler {
     private static Slot hoveredSlot;
 
     public static EventResult onRenderTooltip(GuiGraphicsExtractor guiGraphics, Font font, int mouseX, int mouseY, List<ClientTooltipComponent> components, ClientTooltipPositioner positioner) {
-        if (triggerTime > 0.0F && Minecraft.getInstance().screen instanceof AbstractContainerScreen<?> screen) {
+        if (triggerTime > 0.0F && Minecraft.getInstance().gui.screen() instanceof AbstractContainerScreen<?> screen) {
             if (hoveredSlot != null && hoveredSlot.hasItem() && screen.hoveredSlot == hoveredSlot && screen.getMenu()
                     .getCarried()
                     .isEmpty()) {
@@ -46,7 +46,7 @@ public class SlotOverlayHandler {
     }
 
     public static void renderGuiLayer(GuiGraphicsExtractor guiGraphics, DeltaTracker deltaTracker) {
-        Player player = Minecraft.getInstance().gui.getCameraPlayer();
+        Player player = Minecraft.getInstance().gui.hud.getCameraPlayer();
         if (player != null && hoveredSlot != null) {
             float partialTick = deltaTracker.getGameTimeDeltaPartialTick(false);
             if (getNormalizedTriggerTime(partialTick) > 0.0F) {
@@ -58,7 +58,7 @@ public class SlotOverlayHandler {
         }
     }
 
-    public static void onAfterRender(AbstractContainerScreen<?> screen, GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick) {
+    public static void onAfterExtract(AbstractContainerScreen<?> screen, GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick) {
         if (hoveredSlot != null && getNormalizedTriggerTime(partialTick) > 0.0F) {
             guiGraphics.pose().pushMatrix();
             guiGraphics.pose().translate(screen.leftPos, screen.topPos);
@@ -88,7 +88,7 @@ public class SlotOverlayHandler {
             lastTriggerTime = triggerTime;
             if (isKeyDown(NoSlotInteractionHandler.LOCK_SLOT_KEY_MAPPING)
                     && !LockedInSlots.CONFIG.get(ClientConfig.class).switchLockInstantly()) {
-                Slot slot = getHoveredSlot(minecraft.screen, minecraft.player);
+                Slot slot = getHoveredSlot(minecraft.gui.screen(), minecraft.player);
                 resetTriggerValues(slot);
                 if (isValidSlot(slot, minecraft.player)) {
                     incrementTriggerTime(minecraft, slot);
@@ -155,7 +155,7 @@ public class SlotOverlayHandler {
 
     public static void executeTriggerAction(Minecraft minecraft) {
         if (LockedInSlots.CONFIG.get(ClientConfig.class).switchLockInstantly()) {
-            Slot slot = getHoveredSlot(minecraft.screen, minecraft.player);
+            Slot slot = getHoveredSlot(minecraft.gui.screen(), minecraft.player);
             executeTriggerAction(minecraft, slot);
         }
     }

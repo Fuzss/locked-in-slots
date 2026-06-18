@@ -101,6 +101,7 @@ public class NoSlotInteractionHandler {
                     }
                 }
             }
+
             if (isHoveringLockedSlot(screen, true, false)) {
                 // don't block all keys, so closing via esc or inventory key still works when hovering a locked slot
                 if (KeyMappingHelper.isKeyActiveAndMatches(minecraft.options.keySwapOffhand, keyEvent)
@@ -113,7 +114,7 @@ public class NoSlotInteractionHandler {
         return EventResult.PASS;
     }
 
-    public static void onAfterRender(AbstractContainerScreen<?> screen, GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick) {
+    public static void onAfterExtract(AbstractContainerScreen<?> screen, GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick) {
         if (!LockedInSlots.CONFIG.get(ClientConfig.class).unlockSlotHint) {
             return;
         }
@@ -130,9 +131,11 @@ public class NoSlotInteractionHandler {
     }
 
     public static void onItemTooltip(ItemStack itemStack, List<Component> tooltipLines, Item.TooltipContext tooltipContext, @Nullable Player player, TooltipFlag tooltipType) {
-        if (!LockedInSlots.CONFIG.get(ClientConfig.class).unlockSlotHint) return;
-        Minecraft minecraft = Minecraft.getInstance();
-        if (minecraft.screen instanceof AbstractContainerScreen<?> abstractContainerScreen) {
+        if (!LockedInSlots.CONFIG.get(ClientConfig.class).unlockSlotHint) {
+            return;
+        }
+
+        if (Minecraft.getInstance().gui.screen() instanceof AbstractContainerScreen<?> abstractContainerScreen) {
             Slot hoveredSlot = abstractContainerScreen.hoveredSlot;
             if (hoveredSlot != null && hoveredSlot.container instanceof Inventory
                     && hoveredSlot.getItem() == itemStack) {
