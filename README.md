@@ -2,9 +2,10 @@
 
 ### Minecraft 26.x
 
-| Branch | Status | Changelog |
-| --- | --- | --- |
-| [26.1.x](https://github.com/Fuzss/locked-in-slots/tree/26.1.x) | ✅&nbsp;Primary | [CHANGELOG.md](https://github.com/Fuzss/locked-in-slots/blob/26.1.x/CHANGELOG.md) |
+| Branch | Status | Changelog | Fabric | NeoForge |
+| --- | --- | --- | --- | --- |
+| [26.2.x](https://github.com/Fuzss/locked-in-slots/tree/26.2.x) | ✅&nbsp;Primary | [CHANGELOG.md](https://github.com/Fuzss/locked-in-slots/blob/26.2.x/CHANGELOG.md) | <img src="https://cdn.simpleicons.org/curseforge" width="14" />&nbsp;[CurseForge](https://www.curseforge.com/minecraft/mc-mods/locked-in-slots/files/all?version=26.1.2&gameVersionTypeId=4)<br /> <img src="https://cdn.simpleicons.org/modrinth" width="14" />&nbsp;[Modrinth](https://modrinth.com/mod/locked-in-slots/versions?g=26.1.2&l=fabric) | <img src="https://cdn.simpleicons.org/curseforge" width="14" />&nbsp;[CurseForge](https://www.curseforge.com/minecraft/mc-mods/locked-in-slots/files/all?version=26.1.2&gameVersionTypeId=6)<br /> <img src="https://cdn.simpleicons.org/modrinth" width="14" />&nbsp;[Modrinth](https://modrinth.com/mod/locked-in-slots/versions?g=26.1.2&l=neoforge) |
+| [26.1.x](https://github.com/Fuzss/locked-in-slots/tree/26.1.x) | ✅&nbsp;Maintained | [CHANGELOG.md](https://github.com/Fuzss/locked-in-slots/blob/26.1.x/CHANGELOG.md) | <img src="https://cdn.simpleicons.org/curseforge" width="14" />&nbsp;[CurseForge](https://www.curseforge.com/minecraft/mc-mods/locked-in-slots/files/all?version=26.1.2&gameVersionTypeId=4)<br /> <img src="https://cdn.simpleicons.org/modrinth" width="14" />&nbsp;[Modrinth](https://modrinth.com/mod/locked-in-slots/versions?g=26.1.2&l=fabric) | <img src="https://cdn.simpleicons.org/curseforge" width="14" />&nbsp;[CurseForge](https://www.curseforge.com/minecraft/mc-mods/locked-in-slots/files/all?version=26.1.2&gameVersionTypeId=6)<br /> <img src="https://cdn.simpleicons.org/modrinth" width="14" />&nbsp;[Modrinth](https://modrinth.com/mod/locked-in-slots/versions?g=26.1.2&l=neoforge) |
 
 ### Minecraft 1.21.x
 
