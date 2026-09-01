@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "description": "Resources for Locked In Slots",
+    "pack_format": 81,
+    "supported_formats": [
+      0,
+      2147483647
+    ]
+  }
+}
