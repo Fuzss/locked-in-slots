@@ -174,8 +174,8 @@ public class SlotOverlayHandler {
 
     public static boolean isKeyDown(KeyMapping keyMapping) {
         // we need to listen to repeat events for the key press, this is not possible using the key mapping instance
-        if (keyMapping.key.getType() == InputConstants.Type.KEYSYM && !keyMapping.isUnbound()) {
-            return InputConstants.isKeyDown(Minecraft.getInstance().getWindow(), keyMapping.key.getValue());
+        if (keyMapping.key.getType() == InputConstants.Type.KEYBOARD && !keyMapping.isUnbound()) {
+            return InputConstants.isKeyDown(keyMapping.key.getValue());
         } else {
             return false;
         }

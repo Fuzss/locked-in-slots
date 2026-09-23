@@ -20,7 +20,7 @@ abstract class HudMixin {
 
     @Inject(method = "extractItemHotbar",
             at = @At(value = "INVOKE",
-                     target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIII)V",
+                     target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIII)V",
                      shift = At.Shift.AFTER,
                      ordinal = 0))
     private void extractItemHotbar(GuiGraphicsExtractor guiGraphics, DeltaTracker deltaTracker, CallbackInfo callback) {
